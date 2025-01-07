@@ -1,14 +1,14 @@
 This folder holds the filtered data and methods for filtering it
 
 
-run
+**run**
 ```
 python -m venv venv
 source venv/Scripts/activate
 pip install -r requirements.txt
 ```
 
-visit
+**visit**
 ```
 visit this link  https://www.pinecone.io/
 signin by creating an account
