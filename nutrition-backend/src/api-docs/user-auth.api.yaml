@@ -1,0 +1,181 @@
+tags:
+  name: User Authentication
+  description: User authentication operations
+
+/auth/register:
+  post:
+    summary: Register a new user
+    tags: [ User Authentication ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              firstName:
+                type: string
+              lastName:
+                type: string
+              email:
+                type: string
+                format: email
+              password:
+                type: string
+              phone:
+                type: string
+            required:
+            - firstName
+            - lastName
+            - email
+            - password
+            - phone
+    responses:
+      200:
+        description: Successfully created new user
+      409:
+        description: User already exists with this email
+
+/auth/verify-email:
+  post:
+    summary: Verify user's email
+    tags: [ User Authentication ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+              emailVerificationToken:
+                type: string
+                length: 6
+            required:
+            - email
+            - emailVerificationToken
+    responses:
+      200:
+        description: Email successfully verified
+      400:
+        description: Email already verified | Failed to verify email
+      401:
+        description: Token expired | Invalid token
+      404:
+        description: User not found with this email | Token not found
+
+/auth/resend-verification-email/{email}:
+  get:
+    summary: Resend verification email
+    tags: [ User Authentication ]
+    parameters:
+    - in: path
+      name: email
+      required: true
+      schema:
+        type: string
+        format: email
+    responses:
+      200:
+        description: Verification email resent successfully
+      400:
+        description: Failed to resend verification email
+      404:
+        description: User not found with this email
+      409:
+        description: Email already verified
+
+/auth/login:
+  post:
+    summary: Login to user account
+    tags: [ User Authentication ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+              password:
+                type: string
+            required:
+            - email
+            - password
+    responses:
+      200:
+        description: Successfully logged in
+      401:
+        description: Invalid username or password
+      403:
+        description: User account is not verified
+      404:
+        description: No user found with this email
+
+/auth/verify:
+  get:
+    summary: Verify user Jwt and get user details
+    tags: [ User Authentication ]
+    security:
+    - bearerAuth: []
+    responses:
+      200:
+        description: Successfully verified jwt token
+
+/auth/forgot-password:
+  post:
+    summary: Request link to reset password with a reset token
+    tags: [ User Authentication ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+            required:
+            - email
+    responses:
+      200:
+        description: Password reset email sent successfully
+      404:
+        description: No user found with this email
+
+/auth/reset-password:
+  post:
+    summary: Reset password with the generated reset token
+    tags: [ User Authentication ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+              passwordResetToken:
+                type: string
+              password:
+                type: string
+            required:
+            - email
+            - passwordResetToken
+            - password
+    responses:
+      200:
+        description: Password reset successfully
+      400:
+        description: Failed to reset password
+      401:
+        description: Token expired | Invalid token
+      404:
+        description: No user found with this email | Token not found

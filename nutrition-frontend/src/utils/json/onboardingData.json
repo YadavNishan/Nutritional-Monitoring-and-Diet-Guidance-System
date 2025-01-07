@@ -1,0 +1,28 @@
+{
+  "onboarding": [
+    {
+      "id": "onboarding1",
+      "title": "Welcome!",
+      "subtitle": "Congratulations on taking the first step toward a healthier you!",
+      "asset": "/welcome-page/Onboarding Illustrations 1.svg"
+    },
+    {
+      "id": "onboarding2",
+      "title": "Effortless Tracking",
+      "subtitle": "Easily log your meals, snacks and water intake",
+      "asset": "/welcome-page/Onboarding Illustrations 2.svg"
+    },
+    {
+      "id": "onboarding3",
+      "title": "Goal Setting",
+      "subtitle": "Set realistic goals and watch your progress unfold",
+      "asset": "/welcome-page/Onboarding Illustrations 3.svg"
+    },
+    {
+      "id": "onboarding4",
+      "title": "Welcome",
+      "subtitle": "Start or sign in to your account",
+      "asset": "/welcome-page/index.svg"
+    }
+  ]
+}

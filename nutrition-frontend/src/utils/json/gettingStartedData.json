@@ -1,0 +1,29 @@
+{
+  "gettingStarted": [
+    {
+      "for": "gender",
+      "title": "What’s your gender?",
+      "subtitle": "Male bodies need more calories."
+    },
+    {
+      "for": "height",
+      "title": "How tall are you? ",
+      "subtitle": "The taller you are, the more calories your body needs."
+    },
+    {
+      "for": "weight",
+      "title": "What’s your weight?",
+      "subtitle": "The more you weigh, the more calories your body burns"
+    },
+    {
+      "for": "activityLevel",
+      "title": "How active are you?",
+      "subtitle": "A sedentary person burns fewer calories than an active person."
+    },
+    {
+      "for": "age",
+      "title": "What’s your age?",
+      "subtitle": "Required number of calories varies with age."
+    }
+  ]
+}

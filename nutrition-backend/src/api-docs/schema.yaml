@@ -1,0 +1,60 @@
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    User:
+      type: object
+      required:
+      - firstName
+      - lastName
+      - email
+      - password
+      - phone
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+        phone:
+          type: string
+      example:
+        firstName: John
+        lastName: Doe
+        email: johndoe123@email.com
+        password: Password@123
+        phone: +977 9841000000
+  parameters:
+    PaginationParams:
+      name: Pagination
+      in: query
+      required: false
+      description: Pagination parameters
+      schema:
+        type: object
+        properties:
+          page:
+            type: integer
+            default: 1
+            description: Page number for pagination
+          limit:
+            type: integer
+            default: 10
+            description: Number of items per page
+          sort_by:
+            type: string
+            default: createdAt
+            description: Field to sort by
+          sort_order:
+            type: string
+            enum: [ ASC, DESC ]
+            default: DESC
+            description: Sort order (ascending or descending)

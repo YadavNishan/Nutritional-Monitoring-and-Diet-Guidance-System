@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title {
+  @apply text-center font-dm-sans text-2xl font-semibold;
+}
+.subtitle {
+  @apply py-2 text-center font-nunito-sans text-lg text-[#6e7179];
+}
+
+.form {
+  @apply flex h-screen w-full flex-col items-center justify-center;
+  .form-header {
+    @apply px-3;
+  }
+  .form-body {
+    .form-container {
+      @apply mx-auto my-auto flex min-w-[380px] flex-col items-center justify-center gap-6 rounded-xl px-5 py-3;
+      .input-container {
+        @apply mx-auto flex w-full flex-col gap-1;
+        label {
+          @apply font-dm-sans text-lg font-semibold;
+        }
+        input {
+          @apply rounded-md border-2 border-gray-300 p-2;
+        }
+      }
+    }
+  }
+}
+
+.input-container {
+  @apply mx-auto flex w-full flex-col gap-1;
+  label {
+    @apply font-dm-sans text-lg font-semibold;
+  }
+  input {
+    @apply rounded-md border-2 border-gray-300 p-2;
+  }
+}
+
+.custom-date-input {
+  border: 2px solid #2563eb;
+  background-color: #e0f7fa;
+}

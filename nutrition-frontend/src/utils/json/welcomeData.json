@@ -1,0 +1,23 @@
+{
+  "projectDescription": {
+    "name": "Nutritional Monitoring and Diet Guidance System",
+    "description": "This project is a web application that allows users to track their daily food intake and receive personalized diet recommendations based on their nutritional needs. Users can log their meals, view their daily nutritional intake, and receive diet recommendations based on their goals and dietary restrictions. The application also provides educational resources on nutrition and healthy eating habits to help users make informed decisions about their diet.",
+    "logo": "/logo.svg",
+    "team": [
+      {
+        "name": "Aaryash Shakya",
+        "github": "github.com/Aaryash-Shakya",
+        "email": ""
+      },
+      {
+        "name": "Kaushal Kishor Mishra",
+        "github": "github.com/KaushalKishorMishra",
+        "email": ""
+      }
+    ]
+  },
+  "homePage": {
+    "title": "Welcome!",
+    "subtitle": "Congratulations on taking the first step toward a healthier you!"
+  }
+}
