@@ -9,6 +9,7 @@ pip install -r requirements.txt
 ```
 
 **visit**
+<br/>
 visit this link  https://www.pinecone.io/
 <br/>
 signin by creating an account
